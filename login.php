@@ -8,12 +8,14 @@ $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
  
 $pis = $_POST['pis'];
 $password = $_POST['password'];
+$month = $_POST['month'];
+$year = $_POST['year'];
  
-$Sql_Query = "select * from salary where EMP_CODE = '$pis' and PASSWORD = '$password' ";
+$Sql_Query = "SELECT * FROM salary where EMP_CODE = '$pis' and MONTH = '$month' and YEAR = '$year' and PASSWORD = '$password'";
 
 $result = mysqli_query($con, $Sql_Query);  
 $json_array = array();  
-while($row = mysqli_fetch_assoc($result)
+while($row = mysqli_fetch_assoc($result))
 
  {  
    $json_array[] = $row;  
