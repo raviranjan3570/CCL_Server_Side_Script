@@ -4,9 +4,9 @@ include 'DatabaseConfig.php';
 
  $con = mysqli_connect($HostName,$HostUser,$HostPass,$DatabaseName);
 
- $pis = '9080908';
- $email = 'raviranjan3570@gmail.com';
- $password = 'Ravi@0908';
+ $pis = $_POST['pis'];
+ $email = $_POST['email'];
+ $password = $_POST['password'];
 
  $CheckSQL = " SELECT * FROM salary WHERE EMP_CODE = '$pis' AND EMAIL='$email' ";
  
